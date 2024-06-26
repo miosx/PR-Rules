@@ -28,6 +28,9 @@ let subscriber = () => {
   } else if (userAgent.startsWith("browser")) {
   	body = body.replace('"entitlements":{},','"entitlements":{"pro":{"expires_date":null,"grace_period_expires_date":null,"product_identifier":"pro_zoomable","purchase_date":"2023-01-07T09:26:18Z"}},');
   	body = body.replace('"non_subscriptions":{},','"non_subscriptions":{"pro_zoomable":[{"is_sandbox":false,"original_purchase_date":"2021-09-01T12:00:00Z","purchase_date":"2021-09-01T12:00:00Z","store":"app_store"}]},');
+  } else if (userAgent.startsWith("tqbrowser")) {
+  	body = body.replace('"entitlements":{},','"entitlements":{"pro_lt":{"expires_date":null,"grace_period_expires_date":null,"product_identifier":"com.tk.client.lifetime","purchase_date":"2023-01-07T09:26:18Z"}},');
+  	body = body.replace('"non_subscriptions":{},','"non_subscriptions":{"com.tk.client.lifetime":[{"is_sandbox":false,"original_purchase_date":"2021-09-01T12:00:00Z","purchase_date":"2021-09-01T12:00:00Z","store":"app_store"}]},');
   }
   $done({body});
 };
