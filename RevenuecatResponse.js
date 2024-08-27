@@ -32,7 +32,7 @@ let subscriber = () => {
   	body = body.replace('"entitlements":{},','"entitlements":{"pro_lt":{"expires_date":null,"grace_period_expires_date":null,"product_identifier":"com.tk.client.lifetime","purchase_date":"2023-01-07T09:26:18Z"}},');
   	body = body.replace('"non_subscriptions":{},','"non_subscriptions":{"com.tk.client.lifetime":[{"is_sandbox":false,"original_purchase_date":"2021-09-01T12:00:00Z","purchase_date":"2021-09-01T12:00:00Z","store":"app_store"}]},');
   } else if (userAgent.startsWith("tevegram")) {
-  	body = body.replace('"entitlements":{},','"entitlements":{"default":{"expires_date":null,"grace_period_expires_date":null,"product_identifier":"lifetime_unlock","purchase_date":"2023-01-07T09:26:18Z"}},');
+  	body = body.replace('"entitlements":{},','"entitlements":{"Premium access":{"expires_date":null,"grace_period_expires_date":null,"product_identifier":"lifetime_unlock","purchase_date":"2023-01-07T09:26:18Z"}},');
   	body = body.replace('"non_subscriptions":{},','"non_subscriptions":{"lifetime_unlock":[{"is_sandbox":false,"original_purchase_date":"2021-09-01T12:00:00Z","purchase_date":"2021-09-01T12:00:00Z","store":"app_store"}]},');
   } else if (userAgent.startsWith("picseedclient")) {
   	body = body.replace('"entitlements":{},','"entitlements":{"Pro":{"expires_date":"2033-05-18T03:33:19Z","grace_period_expires_date":null,"product_identifier":"com.picseed.sub.pro.annual","purchase_date":"2023-01-07T09:26:18Z"}},');
