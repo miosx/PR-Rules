@@ -7,6 +7,15 @@ let subscriber = () => {
   	return;
   }
   let headers = $request.headers;
+  
+  var bundleID = headers['x-client-bundle-id'];
+  if (bundleID == "com.zy.JSTV") {
+  	body = body.replace('"entitlements":{},','"entitlements":{"product_lifetime":{"expires_date":null,"grace_period_expires_date":null,"product_identifier":"com.zy.JSTV.product_lifetime","purchase_date":"2023-01-07T09:26:18Z"}},');
+  	body = body.replace('"non_subscriptions":{},','"non_subscriptions":{"com.zy.JSTV.product_lifetime":[{"is_sandbox":false,"original_purchase_date":"2021-09-01T12:00:00Z","purchase_date":"2021-09-01T12:00:00Z","store":"app_store","id":"17459f5ff7","store_transaction_id":"340001090153249"}]},');
+    $done({body});
+  	return;
+  }
+  
   var userAgent = headers['user-agent'] || headers['User-Agent'];
   userAgent = userAgent.toLowerCase();
 //   console.log(userAgent);
